@@ -24,15 +24,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build the project
-        run: npm run build
+      - name: Build project with Vite
+        run: npx vite build
 
-      - name: List output folder (debug step)
+      - name: Verify dist folder exists
         run: |
           echo "Listing project root:"
           ls -al
           echo "Listing dist folder:"
-          ls -al dist || echo "DIST FOLDER IS MISSING"
+          ls -al dist || echo "DIST FOLDER MISSING"
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
