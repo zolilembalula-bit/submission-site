@@ -24,11 +24,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Give vite execute permission
-        run: chmod +x node_modules/.bin/vite
-
-      - name: Build
+      - name: Build the project
         run: npm run build
+
+      - name: List output folder (debug step)
+        run: |
+          echo "Listing project root:"
+          ls -al
+          echo "Listing dist folder:"
+          ls -al dist || echo "DIST FOLDER IS MISSING"
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
