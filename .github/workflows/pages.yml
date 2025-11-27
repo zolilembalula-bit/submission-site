@@ -12,6 +12,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ./
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,15 +28,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project with Vite
-        run: npx vite build
+      - name: Fix permissions for vite
+        run: chmod +x node_modules/.bin/*
 
-      - name: Verify dist folder exists
-        run: |
-          echo "Listing project root:"
-          ls -al
-          echo "Listing dist folder:"
-          ls -al dist || echo "DIST FOLDER MISSING"
+      - name: Build with Vite
+        run: ./node_modules/.bin/vite build
+
+      - name: Show build output
+        run: ls -R dist
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
