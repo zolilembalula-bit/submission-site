@@ -1,24 +1,23 @@
 {
-  "name": "alz-portfolio-submissions",
+  "name": "submission-site",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
-  "homepage": "https://zolilembalula-bit.github.io/submission-site/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "start": "vite"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "wouter": "^3.0.0",
-    "framer-motion": "^10.0.0"
+    "wouter": "^2.11.0",
+    "framer-motion": "^10.16.4"
   },
   "devDependencies": {
-    "vite": "^5.0.0",
-    "@vitejs/plugin-react": "^4.0.0",
-    "gh-pages": "^5.0.0"
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.2.0",
+    "tailwindcss": "^3.4.10",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.31"
   }
 }

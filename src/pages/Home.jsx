@@ -5,7 +5,13 @@ export default function Home(){
   return (
     <section className='hero'>
       <div className='container'>
-        <motion.h1 initial={opacity:0,y:-10} animate={opacity:1,y:0}>Albert Zolile Mbalula</motion.h1>
+        <motion.h1 
+  initial={{ opacity: 0, y: -10 }} 
+  animate={{ opacity: 1, y: 0 }}
+>
+  Albert Zolile Mbalula
+</motion.h1>
+
         <p className='lead'>Educator · Physics Teacher · Curriculum Developer</p>
         <div className='home-grid'>
           <div className='card'>
