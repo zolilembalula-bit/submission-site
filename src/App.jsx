@@ -20,7 +20,8 @@ export default function App(){
       <div className="app-root">
         <Navbar />
         <main className="container">
-          <Switch>
+          {/* IMPORTANT: Base path added for GitHub Pages */}
+          <Switch base="/submission-site">
             <Route path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/projects" component={Projects} />
